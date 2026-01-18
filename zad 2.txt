@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int sequence_calc(int n){
+    
+    if(n == 0){
+        return 0;
+    }
+    
+    if(n % 3 == 0){
+        n = n / 3 + 1;
+        int wynik = n;
+    }
+    
+    if(n % 3 == 1){
+        n = (n - 1) * 2;
+        int wynik = n;
+    }
+    
+    if(n % 3 == 2){
+        n = (n - 2) + 1;
+        int wynik = n;
+    }
+    
+    return n;
+}
+
+int main()
+{
+    int n;
+    
+    scanf("%d", &n);
+    
+    int wynik = sequence_calc(n);
+    
+    printf("%d", wynik);
+
+    return 0;
+}
