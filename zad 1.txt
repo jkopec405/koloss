@@ -1,0 +1,35 @@
+#include <stdio.h>
+int number_simulation(int n) {
+    int kroki = 0;
+
+    while (n >= 10) {
+        int ostatnia_cyfra = n % 10;
+
+        if (ostatnia_cyfra >= 0 && ostatnia_cyfra <= 3) {
+            n += ostatnia_cyfra * 2;
+        } else if (ostatnia_cyfra >= 4 && ostatnia_cyfra <= 6) {
+            n -= 3;
+        } else { 
+            n /= 2;
+        }
+
+        kroki++;
+    }
+
+    return kroki;
+}
+
+
+
+int main(){
+    int n;
+    int licznik;
+    
+    scanf("%d", &n);
+    
+    int wynik = number_simulation(n);
+    
+    printf("%d", wynik);
+
+    return 0;
+}
