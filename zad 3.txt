@@ -1,0 +1,36 @@
+#include <stdio.h>
+int calculate_score(char znaki[]){
+    int mnoznik = 1;
+    int suma = 0;
+    
+    
+    for(int i = 0; znaki[i] != '\0'; i++){
+        if(znaki[i] >= 'a' && znaki[i] <= 'z'){
+            suma = suma + znaki[i] * mnoznik;
+        }
+        
+        else if(znaki[i] >= '0' && znaki[i] <= '9'){
+            mnoznik = - mnoznik;
+        }
+        
+        else if(znaki[i] >= 'A' && znaki[i] <= 'Z'){
+            suma = 0;
+        }
+        
+    }
+    
+    return suma;
+}
+
+
+int main(){
+    char znaki[100];
+    
+    scanf("%s", &znaki);
+    
+    int suma = calculate_score(znaki);
+    
+    printf("%d", suma);
+    return 0;
+    
+}
